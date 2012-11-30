@@ -1,29 +1,12 @@
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<%= simple_form_for(@order, html: { class: "form-horizontal" }) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-inputs">
+    <%= f.input :name, label: "名字" %>
+    <%= f.input :meal, label: "要點什麼" %>
+    <%= f.input :comment, label: "備註或說明", input_html: { placeholder: "Ex: 大的/小的/不要加辣辣哦 <3" } %>
   </div>
-  <div class="field">
-    <%= f.label :meal %><br />
-    <%= f.text_field :meal %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_field :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit, "我要訂！", { class: 'btn btn-primary' } %>
   </div>
 <% end %>
