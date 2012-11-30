@@ -1,0 +1,12 @@
+<%= simple_form_for(@order, html: { class: "form-horizontal" }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "名字" %>
+    <%= f.input :meal, label: "要點什麼" %>
+    <%= f.input :comment, label: "備註或說明", input_html: { placeholder: "Ex: 大的/小的/不要加辣辣哦 <3" } %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "我要訂！", { class: 'btn btn-primary' } %>
+  </div>
+<% end %>
