@@ -26,7 +26,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
-  gem 'anjlab-bootstrap-rails'
+  gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 end
 
 gem 'jquery-rails'
